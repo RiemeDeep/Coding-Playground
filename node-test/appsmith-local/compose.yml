@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  appsmith:
+    image: appsmith/appsmith-ce   # CE = Community Edition (Open Source)
+    container_name: appsmith
+    ports:
+      - "8080:80"   # danach erreichbar unter http://localhost:8080
+    volumes:
+      - ./stacks:/appsmith-stacks
