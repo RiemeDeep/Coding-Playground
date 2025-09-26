@@ -1,19 +1,7 @@
-const express = require('express');
-const app = express();
-
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-app.get('/', (req, res) => {
-    res.send("Hello Michael! 👋 Dein Express-Server läuft.");
-});
-
-app.get('/hello/:name', (req, res) => {
-    const name = req.params.name;
-    res.send(`Hallo ${name}, willkommen bei Express!`);
-});
+require("dotenv").config();
+const { PORT } = require("./src/config/env");
+const app = require("./src/app");
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`🚀 Server läuft auf http://localhost:${PORT}`);
 });
